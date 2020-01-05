@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.JavaItem.dao.tl.RbprojectMapper" >
+  <resultMap id="BaseResultMap" type="com.accp.JavaItem.pojo.tl.Rbproject" >
+    <id column="rbprojectid" property="rbprojectid" jdbcType="INTEGER" />
+    <result column="rescuebillid" property="rescuebillid" jdbcType="INTEGER" />
+    <result column="artisansid" property="artisansid" jdbcType="INTEGER" />
+    <result column="armemberid" property="armemberid" jdbcType="INTEGER" />
+    <result column="repairbillid" property="repairbillid" jdbcType="INTEGER" />
+    <result column="rbprojectsl" property="rbprojectsl" jdbcType="INTEGER" />
+    <result column="rbprojectms" property="rbprojectms" jdbcType="VARCHAR" />
+    <result column="rbprojectyy" property="rbprojectyy" jdbcType="VARCHAR" />
+    <result column="yprice" property="yprice" jdbcType="REAL" />
+    <result column="yprices" property="yprices" jdbcType="REAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    rbprojectid, rescuebillid, artisansid, armemberid, repairbillid, rbprojectsl, rbprojectms, 
+    rbprojectyy, yprice, yprices
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from rbproject
+    where rbprojectid = #{rbprojectid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from rbproject
+    where rbprojectid = #{rbprojectid,jdbcType=INTEGER}
+  </delete>
+  
+  <insert id="insertSelective" parameterType="com.accp.JavaItem.pojo.tl.Rbproject" >
+    insert into rbproject
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="rbprojectid != null" >
+        rbprojectid,
+      </if>
+      <if test="rescuebillid != null" >
+        rescuebillid,
+      </if>
+      <if test="artisansid != null" >
+        artisansid,
+      </if>
+      <if test="armemberid != null" >
+        armemberid,
+      </if>
+      <if test="repairbillid != null" >
+        repairbillid,
+      </if>
+      <if test="rbprojectsl != null" >
+        rbprojectsl,
+      </if>
+      <if test="rbprojectms != null" >
+        rbprojectms,
+      </if>
+      <if test="rbprojectyy != null" >
+        rbprojectyy,
+      </if>
+      <if test="yprice != null" >
+        yprice,
+      </if>
+      <if test="yprices != null" >
+        yprices,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="rbprojectid != null" >
+        #{rbprojectid,jdbcType=INTEGER},
+      </if>
+      <if test="rescuebillid != null" >
+        #{rescuebillid,jdbcType=INTEGER},
+      </if>
+      <if test="artisansid != null" >
+        #{artisansid,jdbcType=INTEGER},
+      </if>
+      <if test="armemberid != null" >
+        #{armemberid,jdbcType=INTEGER},
+      </if>
+      <if test="repairbillid != null" >
+        #{repairbillid,jdbcType=INTEGER},
+      </if>
+      <if test="rbprojectsl != null" >
+        #{rbprojectsl,jdbcType=INTEGER},
+      </if>
+      <if test="rbprojectms != null" >
+        #{rbprojectms,jdbcType=VARCHAR},
+      </if>
+      <if test="rbprojectyy != null" >
+        #{rbprojectyy,jdbcType=VARCHAR},
+      </if>
+      <if test="yprice != null" >
+        #{yprice,jdbcType=REAL},
+      </if>
+      <if test="yprices != null" >
+        #{yprices,jdbcType=REAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.accp.JavaItem.pojo.tl.Rbproject" >
+    update rbproject
+    <set >
+      <if test="rescuebillid != null" >
+        rescuebillid = #{rescuebillid,jdbcType=INTEGER},
+      </if>
+      <if test="artisansid != null" >
+        artisansid = #{artisansid,jdbcType=INTEGER},
+      </if>
+      <if test="armemberid != null" >
+        armemberid = #{armemberid,jdbcType=INTEGER},
+      </if>
+      <if test="repairbillid != null" >
+        repairbillid = #{repairbillid,jdbcType=INTEGER},
+      </if>
+      <if test="rbprojectsl != null" >
+        rbprojectsl = #{rbprojectsl,jdbcType=INTEGER},
+      </if>
+      <if test="rbprojectms != null" >
+        rbprojectms = #{rbprojectms,jdbcType=VARCHAR},
+      </if>
+      <if test="rbprojectyy != null" >
+        rbprojectyy = #{rbprojectyy,jdbcType=VARCHAR},
+      </if>
+      <if test="yprice != null" >
+        yprice = #{yprice,jdbcType=REAL},
+      </if>
+      <if test="yprices != null" >
+        yprices = #{yprices,jdbcType=REAL},
+      </if>
+    </set>
+    where rbprojectid = #{rbprojectid,jdbcType=INTEGER}
+  </update>
+ 
+</mapper>
